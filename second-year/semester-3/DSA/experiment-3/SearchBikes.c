@@ -1,4 +1,4 @@
-// DSA | SE COMP | Experiment 3
+// Experiment 2
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -34,11 +34,9 @@ int retry(){
     char ch = 'n';
     printf("\nDo you wish to continue? Y to continue:\n");
     scanf("%c %c", &ch, &ch);
-
     if (ch == 'Y' || ch == 'y') return 1;   
-
     else {
-        printf("\n Thanks for using the program! Goodbye!");
+        printf("\n Thanks for using the program! Goodbye!\n");
         return 0;
     }
 }
@@ -48,155 +46,98 @@ int linearSearch(struct Bike bike[], int n, char * reqModel){
         if( !strcmp(bike[i].bike_model, reqModel) )
             return i;
     }
-
     return -1;
 }
 
+
 int binarySearch(struct Bike bike[], int n, char * reqModel){
     int low = 0, high = n, mid = ( low + high )/2;
-
     while( low < high){
-
         if( !strcmp( reqModel, bike[mid].bike_model )  )
             return mid;
-
         if( strcmp( reqModel, bike[mid].bike_model ) > 0) // right side
-            low = mid + 1;
-        
+            low = mid + 1;        
         else
-            high = mid - 1;
-        
+            high = mid - 1;        
         mid = ( low + high )/2;
     }
-
     return -1;
 }
 
 int recursiveBinarySearch(struct Bike bike[], char * reqModel, int low, int high){
-    int mid;
-    
-    while( low < high){
-        mid = ( low + high )/2;
-    
+    int mid;    
+    while( low < high ){
+        mid = ( low + high )/2;    
     if(!strcmp( reqModel, bike[mid].bike_model ))
-        return mid;
-    
+        return mid;    
     if( strcmp( reqModel, bike[mid].bike_model ) > 0) // right side
-        return recursiveBinarySearch(bike, reqModel, mid + 1, high);
-    
+        return recursiveBinarySearch(bike, reqModel, mid + 1, high);    
     else
         return recursiveBinarySearch(bike, reqModel, low, mid - 1);
     }
-
-    return -1;
+    if( high > low )
+        return -1;
 }
 
 int main(){
     int i = -1, n, ch, opt, low = 0, high;
-
     char *model;
     model = (char *) malloc ( sizeof(char) * 20 );
-
     struct Bike bike[100];
     printf("\nEnter the number of bikes: ");
     scanf("%d", &n);
-
     inputBikes(n, bike);
-
-    //Input Test
-    displayBikes(n, bike);
-
-    printf("\n\tMenu:\n1. Linear Search\n2. Binary Search\n3. Recursive Binary Search\n4. Closed Hashing\n5. Open Hashing\n6. Exit\n\nEnter your choice: ");
+    printf("\n\tMenu:\n1. Linear Search\n2. Binary Search\n3. Recursive Binary Search\n4. Exit\n\nEnter your choice: ");
     scanf("%d", &opt);
-
     switch (opt){
-
         case 1: { // Linear Search
-
             printf("\n\nEnter the Bike Model that you wish to search:\n");
             scanf("%s", model);
-
             i = linearSearch(bike, n, model);
-
             if( i >= 0 ){
                 printf("\n%s is found at index: %d\n\n", model, i);
                 showBike(n, bike, i);
             }
-
             else if( i == -1)
                 printf("\n%s is not found!\n\n", model);
-
             if( retry() )
                 main();
-
             break;
         }
         
         case 2: {   // Binary Search
-
             printf("\n\nEnter the Bike Model that you wish to search:\n");
             scanf("%s", model);
-
             i = binarySearch(bike, n, model);
-
             if( i >= 0 ){
                 printf("\n%s is found at index: %d\n\n", model, i);
                 showBike(n, bike, i);
             }
-
             else if( i == -1)
                 printf("\n%s is not found!\n\n", model);
-
             if( retry() )
                 main();
-
             break;
         }
-
         case 3: {   // Recursive Binary Search
             high = n - 1;
-
             printf("\n\nEnter the Bike Model that you wish to search:\n");
             scanf("%s", model);
-
             i =  recursiveBinarySearch(bike, model, low, high);
-
             if( i >= 0 ){
                 printf("\n%s is found at index: %d\n\n", model, i);
                 showBike(n, bike, i);
             }
-
             else if( i == -1)
                 printf("\n%s is not found!\n\n", model);
-
             if( retry() )
                 main();
-
             break;
         }
 
-        case 4: {   // Closed Hashing
-            
-            printf("\n\nFeature not implemented yet, try again later!\n");
-            if( retry() )
-                main();
-
-            break;
-        }
-
-        case 5: {   // Open Hashing
-            
-            printf("\n\nFeature not implemented yet, try again later!\n");
-            if( retry() )
-                main();
-
-            break;
-        }
-
-        case 6: {   //Exit
+        case 4: {   //Exit
             printf("\n Thanks for using the program! Goodbye!\n\n");
             exit(0);
-
             break;
         }
 
@@ -204,7 +145,6 @@ int main(){
             printf("\n\nPlease enter a valid input.\n");
             if( retry() )
                 main();
-                
             break;
         }
             

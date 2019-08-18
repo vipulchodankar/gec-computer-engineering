@@ -16,7 +16,7 @@ struct student{
 
 int init(struct student s[], int n){
     int ns;
-    for(int i=0; i<n; i++){
+    for( int i = 0; i < n ; i++ ){
         s[i].name = (char *) malloc (20 * sizeof(char)); //Max Name Length taken as 20
         s[i].class = (char *) malloc (20 * sizeof(char)); //Max Class Length taken as 20
 
@@ -28,9 +28,9 @@ int init(struct student s[], int n){
         scanf("%d", &ns);
         
         s[i].numberofyears=ns/2;
-        for(int j=0; j<ns; j++){ //Semester Loop
+        for( int j=0 ; j < ns ; j++ ){ //Semester Loop
             printf("\nEnter The Marks for Semester %d:\n", j+1);
-            for(int k=0; k<6; k++){ //Marks Loop
+            for( int k=0 ; k<6 ; k++ ){ //Marks Loop
                 scanf("%d", &s[i].sem[j].marks[k]);
             }
         }
@@ -58,35 +58,34 @@ void display(struct student s[], int n, int ns){
 }
 
 void cal(struct student s[], int n, int ns){
-    int sem_total=0, year_total=0, flag=0;
-    float avg=0;
+    int sem_total = 0, year_total = 0, flag = 0;
+    float avg = 0;
 
-    for(int i=0; i<n; i++){
+    for( int i = 0; i < n; i++ ){
         year_total = 0;
         flag = 0;
-        for(int j=0; j<ns; j++){ //Semester Loop
+        for( int j = 0; j < ns; j++ ){ //Semester Loop
             sem_total=0;
             for(int k=0; k<6; k++){ //Marks Loop
-                if(s[i].sem[j].marks[k] < 40)
-                {
+                if( s[i].sem[j].marks[k] < 40 )
                     flag = 1;
-                }
-                sem_total+= s[i].sem[j].marks[k];
+
+                sem_total += s[i].sem[j].marks[k];
             }
-            s[i].sem[j].total=sem_total;
-            year_total+= sem_total;
+            s[i].sem[j].total = sem_total;
+            year_total += sem_total;
         }
         
-        avg = ((float)year_total/(600.00*ns)) * 100.00;
+        avg = ( (float)year_total / (600.00*ns) ) * 100.00;
         s[i].percentage = avg;
 
-        if( flag == 1)
+        if( flag == 1 )
             strcpy(s[i].class, "Fail");
-        else if( avg > 70.00)
+        else if( avg > 70.00 )
             strcpy(s[i].class, "Distinction");
-        else if( avg > 60.00)
+        else if( avg > 60.00 )
             strcpy(s[i].class, "First Class");
-        else if( avg > 50.00)
+        else if( avg > 50.00 )
             strcpy(s[i].class, "Second Class");
         else
             strcpy(s[i].class, "Fail");

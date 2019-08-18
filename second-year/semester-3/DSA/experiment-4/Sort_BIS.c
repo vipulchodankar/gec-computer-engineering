@@ -9,7 +9,7 @@ struct Player{
 
 void DisplayAll(struct Player Players[], int n){
     for( int i = 0 ; i < n ; i++ )
-        printf("\n%d\t%s\t%d\n", i, Players[i].name, Players[i].jid );
+        printf("%d\t%s\t%d\n", i, Players[i].name, Players[i].jid );
 }
 
 void SelectionSortName(struct Player Players[], int n)
