@@ -49,6 +49,7 @@ void insert( char inputText[] ) {
       rear++;
 
     strcpy( queue[ rear ], inputText );
+    printf("\nFront: %d & Rear: %d\n", front, rear);
   }
 }
 
