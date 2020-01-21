@@ -12,17 +12,13 @@ class shape{
       y = v2;
     }
 
-    virtual void display_area() = 0;
+    virtual void display_area() {
+      cout<< 0.5 * x * y;
+    }
 };
 
 class triangle: public shape{
   double area;
-
-  public:
-    // void display_area() {
-    //   area = 0.5 * x * y;
-    //   cout << "Area of Triangle = " << area;
-    // }
 };
 
 class rectangle: public shape{
