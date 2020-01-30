@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class binarySearch {
+class BinarySearch {
   public static void main (String args[]) {
     int arr[] = {-21, -10, 4, 0, 1, 10, 23, 44, 52, 69, 404};
 
@@ -25,7 +25,6 @@ class binarySearch {
       else 
         low = mid + 1;
     }
-
     System.out.println(num + " was not found.");
   }
 }

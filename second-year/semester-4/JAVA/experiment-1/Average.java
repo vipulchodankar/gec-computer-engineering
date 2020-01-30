@@ -10,12 +10,10 @@ class Average {
       System.out.println("Enter #" + (i+1) + " :");
       num[i] = sc.nextInt();
     }
-
     int sum = 0;
     for(int i = 0; i < n ;i++) {
       sum += num[i];
     }
-
     int average = sum / n;
     System.out.println("Average = " + average );
   }
