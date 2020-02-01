@@ -1,0 +1,5 @@
+// Implementation of insertion, deletion and traversal for fully in-threaded BST
+
+The left and right child pointers are null
+But in threaded bst, left child pointer wil point to predecessor (inorder) and right child pointer will point to successor of current node
+For traversal in a bst, we need to keep track of the list of the nodes present above the current node, it leads to additional usage of space and time, but this could be avoided by using threaded bst
