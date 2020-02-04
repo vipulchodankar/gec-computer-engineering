@@ -7,19 +7,12 @@ class SumA {
         Scanner sc = new Scanner (System.in);
         System.out.println("Enter value of n:");
         int n = sc.nextInt();
-        int arr[] = new int[n/2 + 1];
+        int sum = 0;
 
         for(int i = 0, j = 0; i <= n; i++ ) {
-            if(i % 2 == 0) {
-                arr[j] = i;
-                j++;
+            if(i % 2 == 0 && i % 3 == 0) {
+                sum += i;
             }
-        }
-
-        int sum = 0;
-        for(int i = 0; i < arr.length; i++ ) {
-            if(arr[i] % 3 == 0)
-                sum += arr[i];
         }
 
         System.out.println("Sum of even numbers divisible by 3 upto " + n + " = " + sum);
