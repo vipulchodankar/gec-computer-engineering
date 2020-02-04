@@ -7,16 +7,7 @@ import java.lang.Math;
 class Circle {
     public static void main (String args[]) {
         Scanner sc = new Scanner (System.in);
-        // try {
-        //     System.out.println("Enter the value of radius:");
-        //     double radius = sc.nextDouble();
-        //     if(radius <= 0) {
-        //         throw 0;
-        //     }
-        // } catch (int e) {
-        //     System.out.println(e);
-        // }
-
+        
         System.out.println("Enter the value of radius:");
         double radius = sc.nextDouble();
 
