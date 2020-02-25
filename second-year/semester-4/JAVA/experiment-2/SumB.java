@@ -1,5 +1,5 @@
 // Accept value n from user and consider first n even numbers and calculate the sum of all numbers divisible by 3 and print sum
-//  IF n = 10, then
+//  IF n = 5, then 2, 4, 6, 8 ,10. 
 import java.util.Scanner;
 
 class SumB {
