@@ -1,0 +1,66 @@
+8086 Instruction Set
+
+1. Data Transfer
+    
+    mov
+    ppush - push a word onto stack
+    pop - pop word from top of stack
+    pusha - pushes all registers into stack
+    popa - pop all registers from stack and push into registers
+    xchg
+    
+    in - user input word stored in ax register
+    out - ax register content will be outputted
+
+    lea - load address of operands
+    lds - load data segment
+    les - load extra segment
+
+    lahf - load lower byte of data from flag register into ah
+    sahf - store data into lower byte of ah
+    pushf - push flag onto stack 
+    popf - pop stack top into flag
+
+    aaa - ascii adjust after addition
+
+    add - add two registers and store result in first
+    adc - add with carry
+    inc - increment
+    jnge - jump not greater than equal to
+
+    sub - subtract
+    dec - decrement
+    npg - takes complement and add two's complement to it
+
+    cmp - compares two numbers | subs num2 from num1, if num2 > num1 then sign flag, if equal then ...
+
+    mul - multiply a byte with byte/ word with word | unsigned, positive only
+    imul - muls signed numbers 2 bytes or 2 words
+
+    div - divides a double word(32b) with a word or with Bytes | 32/16 or 16/8
+    idiv - div but with signed numbers
+
+    cbw - copies sign of lower byte into upper byte
+    cwd - cbw but with lower word and double word
+    not - reverses 0s and 1s
+    and - add 2 bits
+    or - mul 2 bits
+    xor - perform xor on each bit
+    test - similar to add, sets flag but doesnt change operands
+    
+    shl/sal - shifts left/
+    shr/sar - shifts right/ shift right but keep same msb
+    
+    rol - rotate left also carry flag
+    ror - rotates right also carry flag
+    rcr - rotates right with carry exchange moved out bit with carry bit
+    rcl - "" left
+
+
+2. Arithmatic
+3. Bit Manipulation
+4. String
+5. Program Execution
+6. Processor Control
+7. Iteration Control
+8. Interrupt
