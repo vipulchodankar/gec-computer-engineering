@@ -1,7 +1,7 @@
-;; 8086 ALP to add n numbers and find average, average.asm
+; 8086 ALP to add n numbers and find average, average.asm
 ; In this program, we will initialise
 ; n numbers in memory location, add them and find average
-; Registers used: AX. CX
+; Registers used: AX. CX, DX
 ; Ports used:
 
 DATA SEGMENT
@@ -19,7 +19,7 @@ CODE SEGMENT
             MOV AH, 01H     ;INPUT
             INT 21H         ;INPUT INTERRUPT
             AND AL, 0FH     ;BCD FORM
-            MOV AH, 0       ;
+            MOV AH, 0       ;SET  AH TO 0
             MOV N, AX       ;STORE VALUE OF N
 
             MOV CX, N       ;COUNTER TILL N NUMBERS
@@ -27,17 +27,21 @@ CODE SEGMENT
     INPUT:  MOV AH, 01H     ;INPUT
             INT 21H         ;INPUT INTERRUPT
             AND AL, 0FH     ;BCD FORM
-            MOV AH, 0       ;
+            MOV AH, 0       ;SET  AH TO 0
             ADD SUM, AX     ;KEEP ADDING INPUTS
             LOOP INPUT      ;LOOP TILL N
 
             MOV AX, SUM     ;MOVE SUM TO AX
             DIV N           ;DIVIDE SUM BY N
-
             MOV AVG, AL     ;MOV VALUE OF AVERAGE TO AVG
-            ADD AVG, 48     ;CONVERT TO ASCII
-            MOV DL, AVG     ;STORE AVG IN DL FOR PRINTING
+
             MOV AH, 02H     ;OUTPUT
+            MOV DX, SUM     ;STORE SUM IN DL FOR PRINTING
+            ADD DL, 48      ;CONVERT TO ASCII
+            INT 21H         ;OUTPUT INTERRUPT
+
+            MOV DL, AVG     ;STORE AVG IN DL FOR PRINTING
+            ADD DL, 48      ;CONVERT TO ASCII
             INT 21H         ;OUTPUT INTERRUPT
 CODE ENDS
 END START
