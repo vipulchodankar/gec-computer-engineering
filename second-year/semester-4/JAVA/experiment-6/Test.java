@@ -16,8 +16,10 @@ class Test {
         //! get(int index) - returns the object located at the given index in the ArrayList
         System.out.println("\nElement at index 0: " + arr.get(0) );
         
+
         //! size() - returns the size of the ArrayList
         System.out.println("\nSize of ArrayList: " + arr.size() );
+
         
         //! remove(int index) - removes the object located at the given index from the ArrayList
         arr.remove(1);
@@ -35,9 +37,10 @@ class Test {
 
         //! clear() - clears the ArrayList
         arr.clear();
-        System.out.println("\nAfter clearing ArrayList, ");
+        System.out.println("\nAfter clearing ArrayList, " + True);
         display(arr);
-    }
+
+arr.c    }
 
     public static void display(ArrayList<Integer> arr) {
         System.out.print("ArrayList: ");
