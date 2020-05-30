@@ -1,0 +1,5 @@
+Withdrawing 500.0
+Depositing 5000.0
+Withdrawing 50.0
+Withdrawing 1000.0
+Depositing 2000.0
