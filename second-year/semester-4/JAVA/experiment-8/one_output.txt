@@ -1,0 +1,25 @@
+Name is Default Name
+Age is 18
+
+Student:
+Name is Default Name
+Age is 18
+Roll no is 181105000
+Branch is Default Branch
+
+Name is Default Name
+Age is 18
+Ec number is 0
+Date of joining is Fri Jan 01 00:00:00 IST 1999
+
+Staff: 
+Name is Default Name
+Age is 18
+Ec number is 0
+Date of joining is Fri Jan 01 00:00:00 IST 1999
+
+Faculty
+Name is Default Name
+Age is 18
+Ec number is 0
+Date of joining is Fri Jan 01 00:00:00 IST 1999
