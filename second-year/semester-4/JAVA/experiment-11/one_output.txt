@@ -1,0 +1,29 @@
+Enter number of students:
+2
+
+- Student number 1 -
+Enter first name:
+Vipul
+Enter last name:
+Chodankar
+Enter roll number:
+5066
+Enter subject 1 marks:
+79
+Enter subject 2 marks:
+69
+
+- Student number 2 -
+Enter first name:
+Vivek
+Enter last name:
+Silimkhan
+Enter roll number:
+5059
+Enter subject 1 marks:
+89
+Enter subject 2 marks:
+94
+
+Content of Student.dat:
+Vipul Chodankar 5066 79.0 74.0 Vivek Silimkhan 5059 89.0 91.5 
