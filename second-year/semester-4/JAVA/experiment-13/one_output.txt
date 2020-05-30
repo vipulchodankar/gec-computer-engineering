@@ -1,0 +1,9 @@
+
+The Unsorted Collection is:
+4 2 0 6 9 1 
+
+The Sorted Collection is:
+0 1 2 4 6 9 
+
+Searching for '2'
+Found at index 2 using binary search.
