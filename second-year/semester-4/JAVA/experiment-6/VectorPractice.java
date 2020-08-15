@@ -7,5 +7,6 @@ class VectorPractice {
         Vector vec = new Vector(5);
         vec.add(10);
         System.out.println(vec.get(0));
+        vec.
     }
 }

@@ -132,33 +132,33 @@ class Polygon extends TwoDObject {
 
 }
 
-class Quadrilateral extends Polygon {
+// class Quadrilateral extends Polygon {
 
-}
+// }
 
-class Rectangle extends Quadrilateral {
+// class Rectangle extends Quadrilateral {
 
-}
+// }
 
-class Parallelogram extends Quadrilateral {
+// class Parallelogram extends Quadrilateral {
 
-}
+// }
 
-class Triangle extends Polygon {
+// class Triangle extends Polygon {
 
-}
+// }
 
-class RightAngled extends Triangle {
+// class RightAngled extends Triangle {
 
-}
+// }
 
-class Isosceles extends Triangle {
+// class Isosceles extends Triangle {
 
-}
+// }
 
-class Equilateral extends Triangle {
+// class Equilateral extends Triangle {
 
-}
+// }
 
 // ! End of Two Dimensional Objects
 
